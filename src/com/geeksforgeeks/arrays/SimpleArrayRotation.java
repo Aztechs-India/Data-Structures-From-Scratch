@@ -11,7 +11,7 @@ public class SimpleArrayRotation implements DataStructuresAlgorithms<Void, Integ
 		int n = input.length;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Rotation By How many elements ?");
-		int d = sc.nextInt();
+		int d = (sc.nextInt())%n;
 		//Auxiliary Array For d Elements
 		int[] firstDElements = new int[d];
 		//Copy First d Elements into Auxiliary Array
@@ -24,7 +24,7 @@ public class SimpleArrayRotation implements DataStructuresAlgorithms<Void, Integ
 		}
 		for(int i=n-d; i<n; i++)
 		{
-			input[i] = firstDElements[i-d-1];
+			input[i] = firstDElements[i-(n-d)];
 		}
 		sc.close();
 		return null;
