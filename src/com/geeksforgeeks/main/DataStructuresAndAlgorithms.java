@@ -2,6 +2,7 @@ package com.geeksforgeeks.main;
 
 import com.geeksforgeeks.arrays.SimpleArrayRotation;
 import com.geeksforgeeks.graph.Graph;
+import com.geeksforgeeks.graphs.CycleDetectionInDirectedGraph;
 import com.geeksforgeeks.graphs.CycleDetectionInUndirectedGraph;
 import com.geeksforgeeks.interfaces.DataStructuresAlgorithms;
 
@@ -16,7 +17,7 @@ public class DataStructuresAndAlgorithms {
 			System.out.print(input[i]);
 		}*/
 		
-		DataStructuresAlgorithms<Boolean, Graph> data2 = new CycleDetectionInUndirectedGraph();
+		/*DataStructuresAlgorithms<Boolean, Graph> data2 = new CycleDetectionInUndirectedGraph();
 		Graph graph = new Graph(5);
 		graph.addUndirectEdge(0, 1);
 		graph.addUndirectEdge(0, 2);
@@ -26,7 +27,20 @@ public class DataStructuresAndAlgorithms {
 		if(data2.getOutput(graph)) {
 			System.out.print("Cycle Exists");
 		} else {
-			System.out.println("No Cycle Exists");
+			System.out.println("No Cycle");
+		}*/
+		
+		DataStructuresAlgorithms<Boolean, Graph> data3 = new CycleDetectionInDirectedGraph();
+		Graph graph = new Graph(4);
+		graph.addDirectEdge(0, 1);
+		graph.addDirectEdge(0, 2);
+		graph.addDirectEdge(2, 3);
+		//graph.addDirectEdge(2, 0);
+		graph.addDirectEdge(3, 3);
+		if(data3.getOutput(graph)) {
+			System.out.print("Cycle Exists");
+		} else {
+			System.out.println("No Cycle");
 		}
 	}
 }
