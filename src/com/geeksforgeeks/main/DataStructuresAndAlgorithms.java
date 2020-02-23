@@ -30,7 +30,7 @@ public class DataStructuresAndAlgorithms {
 			System.out.println("No Cycle");
 		}*/
 		
-		DataStructuresAlgorithms<Boolean, Graph> data3 = new CycleDetectionInDirectedGraph();
+		/*DataStructuresAlgorithms<Boolean, Graph> data3 = new CycleDetectionInDirectedGraph();
 		Graph graph = new Graph(4);
 		graph.addDirectEdge(0, 1);
 		graph.addDirectEdge(0, 2);
@@ -41,6 +41,15 @@ public class DataStructuresAndAlgorithms {
 			System.out.print("Cycle Exists");
 		} else {
 			System.out.println("No Cycle");
-		}
+		}*/
+
+		Graph graph = new Graph(4);
+		graph.addDirectEdge(0, 1);
+		graph.addDirectEdge(0, 2);
+		graph.addDirectEdge(2, 3);
+		graph.addDirectEdge(2, 0);
+		graph.addDirectEdge(3, 3);
+
+		graph.dfs(0);
 	}
 }
