@@ -42,5 +42,25 @@ public class Graph {
 		adjacencyList[src].add(dest);
 		adjacencyList[dest].add(src);
 	}
+
+	public void dfs(int src) {
+		boolean[] visited = new boolean[vertices];
+		for(int i=0; i<vertices; i++) {
+			if(!visited[i]) 
+				dfsUtil(i, visited);
+		}
+	}
+
+	private void dfsUtil(int src, boolean[] visited) {
+		visited[src] = true;
+		System.out.println(src);
+		Iterator<Integer> adjacents = adjacencyList[src].listIterator();
+		while(adjacents.hasNext()) {
+			int adjacent = adjacents.next();
+			if(!visited[adjacent]) {
+				dfsUtil(adjacent, visited);
+			}
+		}
+	}
 	
 }
